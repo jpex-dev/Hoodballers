@@ -3,11 +3,12 @@ const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const pool = require('../db');
 const  authMiddleware = require('../business/auth/authmiddleware');
-const {getEspacos,getEspacosByDistrito,createEspaco} = require('../controllers/EspacosController');
+const {getEstadoReserva,createReserva,confirmarReserva} = require('../controllers/ReservasController');
 const reservas = express.Router();
 
 
 // reservas.get('/',authMiddleware, getEspacos);
-reservas.get('/getEspacosByDistrito',authMiddleware, getEspacosByDistrito);
-reservas.post('/createEspaco',authMiddleware, createEspaco);
+reservas.get('/getEstadoReserva',authMiddleware, getEstadoReserva);
+reservas.post('/createReserva',authMiddleware, createReserva);
+reservas.post('/confirmarReserva',authMiddleware, confirmarReserva);
 module.exports = reservas;

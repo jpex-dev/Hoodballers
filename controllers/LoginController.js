@@ -20,7 +20,7 @@ const loginFunction = async (req, res) => {
 
     } catch (err) {
         console.error('Erro ao autenticar:', err);
-        res.status(500).json({ message: 'Erro interno no servidor' });
+        res.status(500).json({ message: 'Erro interno no servidor'+err.message });
     }
 };
 

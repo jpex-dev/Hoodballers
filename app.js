@@ -8,6 +8,8 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var espacosRouter = require('./routes/espacos');
+var reservasRouter = require('./routes/reservas');
+
 
 var app = express();
 
@@ -21,6 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/espacos', espacosRouter);
-app.use('/reservas', espacosRouter);
+app.use('/reservas', reservasRouter);
 
 module.exports = app;
